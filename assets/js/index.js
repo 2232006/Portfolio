@@ -2,7 +2,6 @@ const savedFont = localStorage.getItem("font") || "tajawal";
 document.body.classList.remove("font-tajawal", "font-cairo", "font-alexandria");
 document.body.classList.add(`font-${savedFont}`);
 activeButton();
-document.body.classList.add(`font-${savedFont}`);
 if (!localStorage.getItem("theme")) {
   localStorage.setItem("theme", "#6366f1");
   activetheme();
