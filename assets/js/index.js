@@ -1,5 +1,4 @@
 const savedFont = localStorage.getItem("font") || "tajawal";
-
 document.body.classList.remove("font-tajawal", "font-cairo", "font-alexandria");
 activeButton();
 document.body.classList.add(`font-${savedFont}`);
@@ -25,7 +24,6 @@ function showsidebar() {
   document.getElementById("settings-toggle").style.transform =
     "translate(-320px,-50%)";
 }
-
 function hideSideBar() {
   document
     .getElementById("settings-sidebar")
@@ -40,7 +38,6 @@ document
     e.stopPropagation();
     showsidebar();
   });
-
 document
   .getElementById("close-settings")
   .addEventListener("click", hideSideBar);
