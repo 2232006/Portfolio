@@ -1,4 +1,8 @@
-const savedFont = localStorage.getItem("font") || "tajawal";
+if (!localStorage.getItem("font")) {
+  localStorage.setItem("font", "tajawal");
+}
+
+const savedFont = localStorage.getItem("font");
 document.body.classList.remove("font-tajawal", "font-cairo", "font-alexandria");
 document.body.classList.add(`font-${savedFont}`);
 activeButton();
@@ -44,10 +48,15 @@ document
 document.body.addEventListener("click", hideSideBar);
 const buttns = [];
 function activeButton() {
-  console.log(localStorage.getItem("font"));
+  console.log("font =", localStorage.getItem("font"));
   const activebtn = document.querySelector(
     `[data-font="${localStorage.getItem("font")}"]`,
   );
+  console.log(activebtn);
+  if (!activebtn) {
+    console.log("No active font button found");
+    return;
+  }
   activebtn.classList.add(
     "active",
     "border-primary",
